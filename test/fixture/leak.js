@@ -1,1 +1,2 @@
-myLeak = 'uncool';
+implicitLeak = true;
+global.explicitLeak = true;
