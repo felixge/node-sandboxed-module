@@ -70,6 +70,12 @@ Modifying this object has no effect on the state of the sandbox.
 An object holding a list of all module required by the sandboxed module itself.
 The keys are the `moduleId`s used for the require calls.
 
+### sandboxedModule.getGlobalLeaks()
+
+Returns an array of variable names that have leaked into the global scope, not
+counting those that are part of the node environment, or have been injected
+using the `globals:` option.
+
 ## License
 
 sandboxed-module is licensed under the MIT license.
