@@ -3,11 +3,15 @@ var assert = common.assert;
 var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
 
 (function testRequireInjection() {
-  var path = common.dir.fixture + '/require';
-  var exports = SandboxedModule.load(path, {
-    require: {'./foo': 'My Foo'},
-  }).exports;
+  var fakeFoo = {my: 'foo module'};
+  var requireModule = SandboxedModule.load(common.dir.fixture + '/require', {
+    require: {'./foo': fakeFoo},
+  });
+  var exports = requireModule.exports;
 
   assert.strictEqual(exports.bar, 'bar');
-  assert.strictEqual(exports.foo, 'My Foo');
+  assert.strictEqual(exports.foo, fakeFoo);
+
+  assert.strictEqual(requireModule.required['./foo'], fakeFoo);
+  assert.strictEqual(requireModule.required['./bar'], 'bar');
 })();
