@@ -1,14 +1,30 @@
-# injectable-module
+# sandboxed-module
 
-A module that lets you inject test doubles into your modules.
+A sandboxed node.js module loader that lets you inject dependencies into your
+modules.
+
+## Installation
+
+``` bash
+npm install sandboxed-module
+```
 
 ## Usage
 
 ``` javascript
-var InjectableModule = require('injectable-module');
-var myModule = InjectableModule.load('./my', {
+var SandboxedModule = require('sandboxed-module');
+var myModule = SandboxedModule.load('./my', {
   require: {'./foo': {fake: 'foo module'}},
   global: {myGlobal: 'variable'},
   local: {myLocal: 'other variable'},
 });
 ```
+
+## Use case
+
+This module is intended to ease dependency injection for unit testing. However,
+feel free to use it for whatever crimes you can think of.
+
+## License
+
+sandboxed-module is licensed under the MIT license.
