@@ -29,9 +29,10 @@ feel free to use it for whatever crimes you can think of.
 
 ### SandboxedModule.load(moduleId, [options])
 
-Loads a new sandboxed module where `moduleId` is a regular module path / id as
-you would normally pass into `require()`. The new module will be loaded in its
-own v8 context, but otherwise have access to the normal node.js environment.
+Returns a new `SandboxedModule` where `moduleId` is a regular module path / id
+as you would normally pass into `require()`. The new module will be loaded in
+its own v8 context, but otherwise have access to the normal node.js
+environment.
 
 `options` is an optional object that can be used to inject any of the
 following:
