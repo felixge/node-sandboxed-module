@@ -5,7 +5,7 @@ var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
 (function testRequireInjection() {
   var fakeFoo = {my: 'foo module'};
   var requireModule = SandboxedModule.load(common.dir.fixture + '/require', {
-    require: {'./foo': fakeFoo},
+    requires: {'./foo': fakeFoo},
   });
   var exports = requireModule.exports;
 

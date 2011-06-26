@@ -14,9 +14,9 @@ npm install sandboxed-module
 ``` javascript
 var SandboxedModule = require('sandboxed-module');
 var myModule = SandboxedModule.load('./my', {
-  require: {'./foo': {fake: 'foo module'}},
-  global: {myGlobal: 'variable'},
-  local: {myLocal: 'other variable'},
+  requires: {'./foo': {fake: 'foo module'}},
+  globals: {myGlobal: 'variable'},
+  locals: {myLocal: 'other variable'},
 });
 ```
 
