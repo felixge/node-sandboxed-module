@@ -72,8 +72,8 @@ The keys are the `moduleId`s used for the require calls.
 
 ### sandboxedModule.getGlobalLeaks()
 
-Returns an array of variable names that have leaked into the global scope, not
-counting those that are part of the node environment, or have been injected
+Returns an array of variable names that have leaked into the global scope,
+except those those that are part of the node environment, or have been injected
 using the `globals:` option.
 
 ## License
