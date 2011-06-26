@@ -20,7 +20,7 @@ var myModule = SandboxedModule.load('./my', {
 });
 ```
 
-## Use case
+## What to do with this
 
 This module is intended to ease dependency injection for unit testing. However,
 feel free to use it for whatever crimes you can think of.
