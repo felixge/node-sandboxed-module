@@ -4,16 +4,12 @@ var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
 
 (function testGlobals() {
   var path = common.dir.fixture + '/global';
-  var globals = SandboxedModule.load(path).exports;
+  var globalModule = SandboxedModule.load(path);
+  var globals = globalModule.exports;
 
-  assert.ok(globals.module);
-  assert.ok(globals.require);
   assert.ok(globals.global);
   assert.strictEqual(globals.GLOBAL, globals.global);
   assert.strictEqual(globals.root, globals.global);
-  assert.strictEqual(globals.exports, globals.module.exports);
-  assert.equal(globals.__filename, path + '.js');
-  assert.equal(globals.__dirname, common.dir.fixture);
 
   for (var key in global) {
     if (/global|root/i.test(key)) {
