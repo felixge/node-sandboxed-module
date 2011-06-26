@@ -12,6 +12,11 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "require-like": "0.0.2",
+    "stack-trace": "0.0.1"
+  },
+  "devDependencies": {
+    "far": "0.0.3"
+  }
 }
