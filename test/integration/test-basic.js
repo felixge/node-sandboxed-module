@@ -1,9 +1,9 @@
 var common = require('../common');
 var assert = common.assert;
-var InjectableModule = require(common.dir.lib + '/injectable_module');
+var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
 
 (function testRequire() {
-  var foo = InjectableModule.load('../fixture/foo').exports;
+  var foo = SandboxedModule.load('../fixture/foo').exports;
   assert.strictEqual(foo.foo, 'foo');
   assert.strictEqual(foo.bar, 'bar');
 })();

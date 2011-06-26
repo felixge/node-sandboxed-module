@@ -1,10 +1,10 @@
 var common = require('../common');
 var assert = common.assert;
-var InjectableModule = require(common.dir.lib + '/injectable_module');
+var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
 
 (function testRequireInjection() {
   var path = common.dir.fixture + '/require';
-  var exports = InjectableModule.load(path, {
+  var exports = SandboxedModule.load(path, {
     require: {'./foo': 'My Foo'},
   }).exports;
 
