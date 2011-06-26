@@ -43,6 +43,33 @@ following:
 * `globals:` An object of global variables to inject into the sandboxed module.
 * `locals:` An object of local variables to inject into the sandboxed module.
 
+### sandboxedModule.filename
+
+The full path to the module.
+
+### sandboxedModule.module
+
+The underlaying node.js `Module` instance.
+
+### sandboxedModule.exports
+
+A getter returning the `sandboxedModule.module.exports` object.
+
+### sandboxedModule.globals
+
+The global object of the v8 context this module was loaded in. Modifications
+to this object will be reflected in the sandboxed module.
+
+### sandboxedModule.locals
+
+The local variables injected into the sandboxed module using a closure.
+Modifying this object has no effect on the state of the sandbox.
+
+### sandboxedModule.required
+
+An object holding a list of all module required by the sandboxed module itself.
+The keys are the `moduleId`s used for the require calls.
+
 ## License
 
 sandboxed-module is licensed under the MIT license.
