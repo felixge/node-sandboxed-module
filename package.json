@@ -1,0 +1,17 @@
+{
+  "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+  "name": "sandboxed-module",
+  "description": "A sandboxed node.js module loader that lets you inject dependencies into your modules.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/felixge/node-sandboxed-module",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/felixge/node-sandboxed-module.git"
+  },
+  "main": "./lib/sandboxed-module",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
