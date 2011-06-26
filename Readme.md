@@ -1,17 +1,14 @@
-# require-inject
+# injectable-module
 
 A module that lets you inject test doubles into your modules.
 
 ## Usage
 
 ``` javascript
-var requireInject = require('require-inject');
-var myModule = requireInject('./my_module', {
-  require: {
-    './foo': {fake: 'foo module'},
-    'http': {fake: 'http module'}
-  },
-  console: {my: 'console object},
-  __dirname: '/my/fake/dirname',
+var InjectableModule = require('injectable-module');
+var myModule = InjectableModule.load('./my', {
+  require: {'./foo': {fake: 'foo module'}},
+  global: {myGlobal: 'variable'},
+  local: {myLocal: 'other variable'},
 });
 ```
