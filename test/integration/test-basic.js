@@ -1,9 +1,9 @@
 var common = require('../common');
 var assert = common.assert;
-var requireInject = require(common.dir.lib + '/require-inject');
+var InjectableModule = require(common.dir.lib + '/injectable_module');
 
 (function testRequire() {
-  var foo = requireInject('../fixture/foo');
+  var foo = InjectableModule.load('../fixture/foo').exports;
   assert.strictEqual(foo.foo, 'foo');
   assert.strictEqual(foo.bar, 'bar');
 })();

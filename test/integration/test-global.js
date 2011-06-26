@@ -1,10 +1,10 @@
 var common = require('../common');
 var assert = common.assert;
-var requireInject = require(common.dir.lib + '/require-inject');
+var InjectableModule = require(common.dir.lib + '/injectable_module');
 
 (function testGlobals() {
   var path = common.dir.fixture + '/global';
-  var globals = requireInject(path);
+  var globals = InjectableModule.load(path).exports;
 
   assert.ok(globals.module);
   assert.ok(globals.require);
