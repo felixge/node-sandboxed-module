@@ -13,11 +13,11 @@ npm install sandboxed-module
 
 ``` javascript
 var SandboxedModule = require('sandboxed-module');
-var user = SandboxedModule.load('./user', {
+var user = SandboxedModule.require('./user', {
   requires: {'mysql': {fake: 'mysql module'}},
   globals: {myGlobal: 'variable'},
   locals: {myLocal: 'other variable'},
-}).exports;
+});
 ```
 
 ## What to do with this
@@ -42,6 +42,11 @@ following:
   of the sandboxed module.
 * `globals:` An object of global variables to inject into the sandboxed module.
 * `locals:` An object of local variables to inject into the sandboxed module.
+
+### SandboxedModule.require(moduleId, [options])
+
+Identical to `SandboxedModule.load()`, but returns `sandboxedModule.exports`
+directly.
 
 ### sandboxedModule.filename
 
