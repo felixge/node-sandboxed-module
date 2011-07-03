@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/felixge/node-sandboxed-module.git"
   },
-  "main": "./lib/sandboxed-module",
+  "main": "./lib/sandboxed_module",
   "engines": {
     "node": "*"
   },
