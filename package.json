@@ -13,7 +13,7 @@
     "node": "*"
   },
   "dependencies": {
-    "require-like": "0.0.2",
+    "require-like": "0.1.0",
     "stack-trace": "0.0.1"
   },
   "devDependencies": {
