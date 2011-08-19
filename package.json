@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "require-like": "0.1.0",
-    "stack-trace": "0.0.1"
+    "stack-trace": "0.0.6"
   },
   "devDependencies": {
     "far": "0.0.3"
