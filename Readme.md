@@ -1,5 +1,7 @@
 # sandboxed-module
 
+[![Build Status](https://secure.travis-ci.org/felixge/node-sandboxed-module.png)](http://travis-ci.org/felixge/node-sandboxed-module)
+
 A sandboxed node.js module loader that lets you inject dependencies into your
 modules.
 
