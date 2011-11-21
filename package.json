@@ -9,6 +9,9 @@
     "url": "git://github.com/felixge/node-sandboxed-module.git"
   },
   "main": "./lib/sandboxed_module",
+  "scripts": {
+    "test": "make test"
+  },
   "engines": {
     "node": "*"
   },
