@@ -10,7 +10,7 @@
   },
   "main": "./lib/sandboxed_module",
   "scripts": {
-    "test": "make test"
+    "test": "node test/run"
   },
   "engines": {
     "node": "*"
