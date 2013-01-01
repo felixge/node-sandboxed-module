@@ -19,6 +19,7 @@ var user = SandboxedModule.require('./user', {
   requires: {'mysql': {fake: 'mysql module'}},
   globals: {myGlobal: 'variable'},
   locals: {myLocal: 'other variable'},
+  strictMode : true
 });
 ```
 
@@ -44,6 +45,8 @@ following:
   of the sandboxed module.
 * `globals:` An object of global variables to inject into the sandboxed module.
 * `locals:` An object of local variables to inject into the sandboxed module.
+* `strictMode:` A boolean flag that will inclue `"use strict";` when wrapping
+  the sandboxed module.
 
 ### SandboxedModule.require(moduleId, [options])
 
