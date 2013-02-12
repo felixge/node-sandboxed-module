@@ -20,7 +20,7 @@
     "stack-trace": "0.0.6"
   },
   "devDependencies": {
-    "urun": "0.0.4"
+    "urun": "0.0.6"
   },
   "optionalDependencies": {
     "coffee-script": "1.2.0"

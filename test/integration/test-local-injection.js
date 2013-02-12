@@ -1,11 +1,8 @@
-var common = require('../common');
-var assert = common.assert;
-var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
+var assert = require('assert');
+var SandboxedModule = require('../..');
 
-(function testLocalInjection() {
-  var locals = SandboxedModule.load(common.dir.fixture + '/local', {
-    locals: {__filename: 'my filename'},
-  }).exports;
+var locals = SandboxedModule.load('../fixture/local', {
+  locals: { __filename: 'my filename' }
+}).exports;
 
-  assert.strictEqual(locals.__filename, 'my filename');
-})();
+assert.strictEqual(locals.__filename, 'my filename');

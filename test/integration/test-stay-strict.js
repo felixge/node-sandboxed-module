@@ -1,9 +1,6 @@
-var common = require('../common');
-var assert = common.assert;
-var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
+var assert = require('assert');
+var SandboxedModule = require('../..');
 
-(function testStayStrict() {
-  var exports = SandboxedModule.load(common.dir.fixture + '/stayStrict').exports;
+var exports = SandboxedModule.load('../fixture/stayStrict').exports;
 
-  assert(exports() === undefined);
-})();
+assert(exports() === undefined);

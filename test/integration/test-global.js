@@ -1,21 +1,18 @@
-var common = require('../common');
-var assert = common.assert;
-var SandboxedModule = require(common.dir.lib + '/sandboxed_module');
+var assert = require('assert');
+var SandboxedModule = require('../..');
 
-(function testGlobals() {
-  var path = common.dir.fixture + '/global';
-  var globalModule = SandboxedModule.load(path);
-  var globals = globalModule.exports;
+var path = '../fixture/global';
+var globalModule = SandboxedModule.load(path);
+var globals = globalModule.exports;
 
-  assert.ok(globals.global);
-  assert.strictEqual(globals.GLOBAL, globals.global);
-  assert.strictEqual(globals.root, globals.global);
+assert.ok(globals.global);
+assert.strictEqual(globals.GLOBAL, globals.global);
+assert.strictEqual(globals.root, globals.global);
 
-  for (var key in global) {
-    if (/global|root/i.test(key)) {
-      continue;
-    }
-
-    assert.strictEqual(globals[key], global[key], key);
+for (var key in global) {
+  if (/global|root/i.test(key)) {
+    continue;
   }
-})();
+
+  assert.strictEqual(globals[key], global[key], key);
+}
