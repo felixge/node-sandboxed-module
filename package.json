@@ -1,28 +1,28 @@
 {
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "name": "sandboxed-module",
-  "description": "A sandboxed node.js module loader that lets you inject dependencies into your modules.",
+  "description": "A sandboxed Node.js module loader that lets you inject dependencies into your modules.",
+  "keywords": ["require", "mocking", "mocks", "stubs", "dependency injection", "testing"],
+  "license": "MIT",
   "version": "0.1.4",
   "homepage": "https://github.com/felixge/node-sandboxed-module",
   "repository": {
     "type": "git",
     "url": "git://github.com/felixge/node-sandboxed-module.git"
   },
+  "bugs": {
+    "url": "http://github.com/felixge/node-sandboxed-module/issues"
+  },
   "main": "./lib/sandboxed_module",
   "scripts": {
     "test": "node test/run"
-  },
-  "engines": {
-    "node": "*"
   },
   "dependencies": {
     "require-like": "0.1.2",
     "stack-trace": "0.0.6"
   },
   "devDependencies": {
-    "urun": "0.0.6"
-  },
-  "optionalDependencies": {
-    "coffee-script": "1.2.0"
+    "urun": "0.0.6",
+    "coffee-script": "1.x"
   }
 }
