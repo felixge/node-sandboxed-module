@@ -1,0 +1,3 @@
+.npmignore
+.travis.yml
+Makefile
