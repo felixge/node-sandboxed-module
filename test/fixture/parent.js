@@ -1,0 +1,1 @@
+exports.myParent = module.parent;
