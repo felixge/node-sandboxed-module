@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "urun": "0.0.6",
-    "coffee-script": "1.x"
+    "coffee-script": "1.x",
+    "istanbul": "~0.1.44"
   }
 }
