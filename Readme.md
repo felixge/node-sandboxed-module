@@ -44,6 +44,8 @@ following:
   of the sandboxed module.
 * `globals:` An object of global variables to inject into the sandboxed module.
 * `locals:` An object of local variables to inject into the sandboxed module.
+* `sourceTransformers:` An object of named functions to transform the source code of
+the sandboxed module's file (e.g. transpiler language, code coverage).
 
 ### SandboxedModule.require(moduleId, [options])
 
@@ -76,6 +78,29 @@ Modifying this object has no effect on the state of the sandbox.
 
 An object holding a list of all module required by the sandboxed module itself.
 The keys are the `moduleId`s used for the require calls.
+
+### sandboxedModule.sourceTransformers
+
+An object of named functions which will transform the source code required with
+`SandboxedModule.require`. For example, CoffeeScript &
+[istanbul](https://github.com/gotwarlost/istanbul) support is implemented as
+default sourceTransformer functions.
+
+A source transformer receives the source (as it's been transformed thus far) and
+**must** return the transformed source (whether it's changed or unchanged).
+
+An example source transformer to change all instances of the number "3" to "5"
+would look like this:
+
+``` javascript
+SandboxedModule.require('../fixture/baz', {
+  sourceTransformers: {
+    turn3sInto5s: function(source) {
+      return source.replace(/3/g,'5');
+    }
+  }
+})
+```
 
 ## License
 
