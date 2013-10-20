@@ -58,6 +58,17 @@ Sets options globally across all uses of `SandboxedModule.load()` and
 `SandboxedModule.require()`. This way, a commonly needed require, global, local,
 or sourceTransformer can be specified once across all sandboxed modules.
 
+### SandboxedModule.registerBuiltInSourceTransformer(name)
+
+Enables a built-in source transformer by name. Currently, SandboxedModule ships
+with two built in source transformers:
+
+* "coffee" - Compiles source with CoffeeScript [Enabled by default for backwards compatibility]
+* "istanbul" - Instruments sources via istanbul when istanbul code coverage is running.
+
+For example, if you'd like to use SandboxedModule in conjunction with istanbul,
+just run `SandboxedModule.registerBuiltInSourceTransformer('istanbul')`.
+
 ### sandboxedModule.filename
 
 The full path to the module.
@@ -89,8 +100,8 @@ The keys are the `moduleId`s used for the require calls.
 
 An object of named functions which will transform the source code required with
 `SandboxedModule.require`. For example, CoffeeScript &
-[istanbul](https://github.com/gotwarlost/istanbul) support is implemented as
-default sourceTransformer functions.
+[istanbul](https://github.com/gotwarlost/istanbul) support is implemented with
+built-in sourceTransformer functions (see `#registerBuiltInSourceTransformer`).
 
 A source transformer receives the source (as it's been transformed thus far) and
 **must** return the transformed source (whether it's changed or unchanged).

@@ -1,5 +1,6 @@
 var assert = require('assert');
 var SandboxedModule = require('../..');
+SandboxedModule.registerBuiltInSourceTransformer('istanbul');
 
 global['$$cov_1234'] = {};
 var baz = SandboxedModule.load('../fixture/baz').exports,
