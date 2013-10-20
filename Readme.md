@@ -52,6 +52,12 @@ the sandboxed module's file (e.g. transpiler language, code coverage).
 Identical to `SandboxedModule.load()`, but returns `sandboxedModule.exports`
 directly.
 
+### SandboxedModule.configure(options)
+
+Sets options globally across all uses of `SandboxedModule.load()` and
+`SandboxedModule.require()`. This way, a commonly needed require, global, local,
+or sourceTransformer can be specified once across all sandboxed modules.
+
 ### sandboxedModule.filename
 
 The full path to the module.
