@@ -44,11 +44,30 @@ following:
   of the sandboxed module.
 * `globals:` An object of global variables to inject into the sandboxed module.
 * `locals:` An object of local variables to inject into the sandboxed module.
+* `sourceTransformers:` An object of named functions to transform the source code of
+the sandboxed module's file (e.g. transpiler language, code coverage).
 
 ### SandboxedModule.require(moduleId, [options])
 
 Identical to `SandboxedModule.load()`, but returns `sandboxedModule.exports`
 directly.
+
+### SandboxedModule.configure(options)
+
+Sets options globally across all uses of `SandboxedModule.load()` and
+`SandboxedModule.require()`. This way, a commonly needed require, global, local,
+or sourceTransformer can be specified once across all sandboxed modules.
+
+### SandboxedModule.registerBuiltInSourceTransformer(name)
+
+Enables a built-in source transformer by name. Currently, SandboxedModule ships
+with two built in source transformers:
+
+* "coffee" - Compiles source with CoffeeScript [Enabled by default for backwards compatibility]
+* "istanbul" - Instruments sources via istanbul when istanbul code coverage is running.
+
+For example, if you'd like to use SandboxedModule in conjunction with istanbul,
+just run `SandboxedModule.registerBuiltInSourceTransformer('istanbul')`.
 
 ### sandboxedModule.filename
 
@@ -76,6 +95,29 @@ Modifying this object has no effect on the state of the sandbox.
 
 An object holding a list of all module required by the sandboxed module itself.
 The keys are the `moduleId`s used for the require calls.
+
+### sandboxedModule.sourceTransformers
+
+An object of named functions which will transform the source code required with
+`SandboxedModule.require`. For example, CoffeeScript &
+[istanbul](https://github.com/gotwarlost/istanbul) support is implemented with
+built-in sourceTransformer functions (see `#registerBuiltInSourceTransformer`).
+
+A source transformer receives the source (as it's been transformed thus far) and
+**must** return the transformed source (whether it's changed or unchanged).
+
+An example source transformer to change all instances of the number "3" to "5"
+would look like this:
+
+``` javascript
+SandboxedModule.require('../fixture/baz', {
+  sourceTransformers: {
+    turn3sInto5s: function(source) {
+      return source.replace(/3/g,'5');
+    }
+  }
+})
+```
 
 ## License
 
