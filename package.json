@@ -4,7 +4,7 @@
   "description": "A sandboxed Node.js module loader that lets you inject dependencies into your modules.",
   "keywords": ["require", "mocking", "mocks", "stubs", "dependency injection", "testing"],
   "license": "MIT",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "homepage": "https://github.com/felixge/node-sandboxed-module",
   "repository": {
     "type": "git",
