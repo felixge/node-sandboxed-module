@@ -46,6 +46,9 @@ following:
 * `locals:` An object of local variables to inject into the sandboxed module.
 * `sourceTransformers:` An object of named functions to transform the source code of
 the sandboxed module's file (e.g. transpiler language, code coverage).
+* `singleOnly:` If false - modules that are required by the sandboxed module will not
+be sandboxed. By default all modules required by the sandboxedModule will be sandboxed
+using the same options that were used for the original sandboxed module
 
 ### SandboxedModule.require(moduleId, [options])
 
