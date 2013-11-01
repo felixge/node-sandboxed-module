@@ -2,9 +2,7 @@ var assert = require('assert');
 var SandboxedModule = require('../..');
 
 var fakeBar = "fakeBar";
-var requireModule = SandboxedModule.load('../fixture/criss', {
-  recursive:true
-});
+var requireModule = SandboxedModule.load('../fixture/criss');
 var criss = requireModule.exports;
 var cross = criss.cross
 assert.strictEqual(criss.value, "criss value");
