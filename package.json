@@ -24,6 +24,8 @@
   "devDependencies": {
     "urun": "0.0.6",
     "coffee-script": "1.x",
-    "istanbul": "~0.1.44"
+    "istanbul": "~0.1.44",
+    "blanket": "~1.1",
+    "deferred": "~0.6"
   }
 }

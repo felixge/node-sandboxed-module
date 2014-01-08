@@ -61,10 +61,11 @@ or sourceTransformer can be specified once across all sandboxed modules.
 ### SandboxedModule.registerBuiltInSourceTransformer(name)
 
 Enables a built-in source transformer by name. Currently, SandboxedModule ships
-with two built in source transformers:
+with these built in source transformers:
 
 * "coffee" - Compiles source with CoffeeScript [Enabled by default for backwards compatibility]
 * "istanbul" - Instruments sources via istanbul when istanbul code coverage is running.
+* "blanket" - Instruments sources via [blanket](https://github.com/alex-seville/blanket).
 
 For example, if you'd like to use SandboxedModule in conjunction with istanbul,
 just run `SandboxedModule.registerBuiltInSourceTransformer('istanbul')`.
