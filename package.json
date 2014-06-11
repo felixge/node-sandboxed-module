@@ -22,8 +22,8 @@
     "stack-trace": "0.0.9"
   },
   "devDependencies": {
-    "urun": "0.0.6",
+    "urun": "0.0.8",
     "coffee-script": "1.7.x",
-    "istanbul": "~0.1.44"
+    "istanbul": "~0.2.11"
   }
 }
