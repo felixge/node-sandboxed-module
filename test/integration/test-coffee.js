@@ -3,7 +3,7 @@ var SandboxedModule = require('../..');
 
 var hasCoffee = false;
 try {
-  require('coffee-script');
+  require('coffee-script').register();
   hasCoffee = true;
 } catch (e) {}
 

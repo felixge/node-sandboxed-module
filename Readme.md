@@ -63,7 +63,8 @@ or sourceTransformer can be specified once across all sandboxed modules.
 Enables a built-in source transformer by name. Currently, SandboxedModule ships
 with two built in source transformers:
 
-* "coffee" - Compiles source with CoffeeScript [Enabled by default for backwards compatibility]
+* "coffee" - Compiles source with CoffeeScript [Enabled by default for backwards compatibility].
+  Be sure to run `require('coffee-script').register()` or `require('coffee-script/register')` as well.
 * "istanbul" - Instruments sources via istanbul when istanbul code coverage is running.
 
 For example, if you'd like to use SandboxedModule in conjunction with istanbul,
