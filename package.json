@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "require-like": "0.1.2",
-    "stack-trace": "0.0.6"
+    "stack-trace": "0.0.9"
   },
   "devDependencies": {
     "urun": "0.0.6",
