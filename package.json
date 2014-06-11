@@ -2,9 +2,16 @@
   "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
   "name": "sandboxed-module",
   "description": "A sandboxed Node.js module loader that lets you inject dependencies into your modules.",
-  "keywords": ["require", "mocking", "mocks", "stubs", "dependency injection", "testing"],
+  "keywords": [
+    "require",
+    "mocking",
+    "mocks",
+    "stubs",
+    "dependency injection",
+    "testing"
+  ],
   "license": "MIT",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/felixge/node-sandboxed-module",
   "repository": {
     "type": "git",
