@@ -1,4 +1,4 @@
-criss = require('./criss');
+var criss = require('./criss');
 
-module.exports.criss = criss
+module.exports.criss = criss;
 module.exports.value = 'cross value';
