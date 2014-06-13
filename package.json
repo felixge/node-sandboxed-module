@@ -22,15 +22,17 @@
   },
   "main": "./lib/sandboxed_module",
   "scripts": {
-    "test": "node test/run"
+    "test": "node test/run",
+    "posttest": "jshint ./lib/. ./test/. ./test/fixture/. ./test/integration/."
   },
   "dependencies": {
     "require-like": "0.1.2",
     "stack-trace": "0.0.9"
   },
   "devDependencies": {
-    "urun": "0.0.8",
+    "urun": "^0.0.8",
     "coffee-script": "1.7.x",
-    "istanbul": "~0.2.11"
+    "istanbul": "^0.2.11",
+    "jshint": "^2.5.1"
   }
 }
