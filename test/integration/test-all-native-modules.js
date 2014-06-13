@@ -7,7 +7,6 @@ var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
 var SandboxedModule = require('../..');
-var nativeModules = require('../../lib/native_modules');
 
 var temp = path.join(__dirname, 'temp');
 
@@ -19,7 +18,7 @@ fs.mkdir(temp, function (err) {
     throw err;
   }
 
-  // are there any modules?
+  var nativeModules = require('../../lib/native_modules');
   assert.ok(nativeModules.length > 5, 'error discovering native modules');
 
   nativeModules.forEach(function (modName) {
