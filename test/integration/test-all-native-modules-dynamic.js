@@ -1,4 +1,3 @@
-
 // Assert that we can load all the native modules
 // FRAGILE: this tests that all the native modules we know about work
 // FRAGILE: it doesn't test that the native_modules list is exhaustive
@@ -19,7 +18,7 @@ fs.mkdir(temp, function (err) {
   }
 
   var nativeModules = require('../../lib/native_modules');
-  assert.ok(nativeModules.length > 5, 'error discovering native modules');
+  assert.ok(nativeModules.length > 20, 'error discovering native modules, only found '+nativeModules.length);
 
   nativeModules.forEach(function (modName) {
     var filename = path.join(temp, 'fixture_'+modName+'.js');
