@@ -1,3 +1,2 @@
-var json =require('./json');
-
-module.exports.json = json;
+exports.json = require('./json');
+exports.jsonArray = require('./jsonArray.json');
