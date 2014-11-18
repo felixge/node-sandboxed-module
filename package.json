@@ -14,6 +14,9 @@
   "version": "1.0.2",
   "repository": "felixge/node-sandboxed-module",
   "main": "./lib/sandboxed_module",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "prepublish": "node scripts/generate_builtin_modules_list",
     "test": "node test/run"
