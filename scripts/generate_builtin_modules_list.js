@@ -19,4 +19,4 @@ process.moduleLoadList.push = function newPush() {
 // Force an initial call to the interceptor
 require('vm');
 
-fs.writeFileSync(path.resolve(__dirname, 'builtin_modules.json'), JSON.stringify(Object.keys(NativeModule._source), undefined, 2));
+fs.writeFileSync(path.resolve(__dirname, '../lib/builtin_modules.json'), JSON.stringify(Object.keys(NativeModule._source), undefined, 2));
