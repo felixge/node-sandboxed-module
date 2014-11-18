@@ -12,14 +12,7 @@
   ],
   "license": "MIT",
   "version": "1.0.2",
-  "homepage": "https://github.com/felixge/node-sandboxed-module",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/felixge/node-sandboxed-module.git"
-  },
-  "bugs": {
-    "url": "http://github.com/felixge/node-sandboxed-module/issues"
-  },
+  "repository": "felixge/node-sandboxed-module",
   "main": "./lib/sandboxed_module",
   "scripts": {
     "test": "node test/run"
