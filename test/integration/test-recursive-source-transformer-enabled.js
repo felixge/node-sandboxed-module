@@ -6,8 +6,7 @@ var requireModule = SandboxedModule.load('../fixture/require', {
     turnBarToReplacedBar: function (source) {
       return source.replace(/module.exports = 'bar';/g, 'module.exports = \'replacedBar\'');
     }
-  },
-  applySourceTransformersRecursively: true
+  }
 });
 
 var recursiveExports = requireModule.exports;
