@@ -6,10 +6,10 @@ var requireModule = SandboxedModule.load('../fixture/recursiveSourceTransformer'
   requires: {'./bar': fakeBar},
   sourceTransformers: {
     turnBarToReplacedBar: function (source) {
-      return source.replace(/exports.bar = 'bar';/g, 'exports.bar = \'replacedBar\'');
+      return source.replace(/'bar'/g, '\'replacedBar\'');
     },
     turnFakeBarToReplacedBar: function (source) {
-      return source.replace(/module.exports = 'fakeBar';/g, 'module.exports = \'replacedFakeBar\'');
+      return source.replace(/'fakeBar'/g, '\'replacedFakeBar\'');
     }
   },
   sourceTransformersSingleOnly: true

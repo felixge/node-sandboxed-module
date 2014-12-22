@@ -4,15 +4,11 @@ var SandboxedModule = require('../..');
 var requireModule = SandboxedModule.load('../fixture/recursiveSourceTransformer', {
   sourceTransformers: {
     turnBarToReplacedBar: function (source) {
-      return source.replace(/exports.bar = 'bar';/g, 'exports.bar = \'replacedBar\'');
-    },
-    turnFakeBarToReplacedBar: function (source) {
-      return source.replace(/module.exports = 'fakeBar';/g, 'module.exports = \'replacedFakeBar\'');
+      return source.replace(/'bar'/g, '\'replacedBar\'');
     }
-  },
-  singleOnly: true
+  }
 });
 
 var recursiveExports = requireModule.exports;
 assert.strictEqual(recursiveExports.bar, 'replacedBar');
-assert.strictEqual(recursiveExports.foo.bar, 'bar');
+assert.strictEqual(recursiveExports.foo.bar, 'replacedBar');
