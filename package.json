@@ -11,7 +11,7 @@
     "testing"
   ],
   "license": "MIT",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "repository": "felixge/node-sandboxed-module",
   "main": "./lib/sandboxed_module",
   "files": [
