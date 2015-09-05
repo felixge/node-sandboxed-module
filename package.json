@@ -22,6 +22,7 @@
     "test": "node test/run"
   },
   "dependencies": {
+    "babel-core": "^5.8.23",
     "require-like": "0.1.2",
     "stack-trace": "0.0.9"
   },
