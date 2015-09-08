@@ -32,7 +32,6 @@
   "querystring",
   "readline",
   "repl",
-  "smalloc",
   "stream",
   "_stream_readable",
   "_stream_writable",
@@ -52,6 +51,5 @@
   "util",
   "v8",
   "vm",
-  "zlib",
-  "internal/freelist"
+  "zlib"
 ]
