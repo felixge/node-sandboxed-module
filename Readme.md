@@ -52,6 +52,7 @@ using the same options that were used for the original sandboxed module.
 * `sourceTransformersSingleOnly:` If false, the source transformers will not be run against
 modules required by the sandboxed module. By default it will take the same value as
 `singleOnly`.
+* `cache:` An object which is used by the recursive require logic to cache loaded modules. Useful if you want to share the cache between multiple SandboxedModule instances. Only used when `singleOnly` is false.
 
 ### SandboxedModule.require(moduleId, [options])
 
