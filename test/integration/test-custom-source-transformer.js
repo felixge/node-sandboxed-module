@@ -3,7 +3,9 @@ var SandboxedModule = require('../..');
 
 var baz = SandboxedModule.load('../fixture/baz', {
   sourceTransformers: {
-    turn3sInto5s: function(source) {
+    turn3sInto5s: function(source, filename) {
+      assert.strictEqual(filename.match(/test\/fixture\/baz.js$/).length, 1);
+
       return source.replace(/3/g,'5');
     }
   }
