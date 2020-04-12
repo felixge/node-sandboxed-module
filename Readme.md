@@ -52,6 +52,8 @@ using the same options that were used for the original sandboxed module.
 * `sourceTransformersSingleOnly:` If false, the source transformers will not be run against
 modules required by the sandboxed module. By default it will take the same value as
 `singleOnly`.
+* `ignoreMissing:` If true, injected modules will not be required to have a corresponding file
+on the file system. By default this is false.
 
 ### SandboxedModule.require(moduleId, [options])
 
