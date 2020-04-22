@@ -7,7 +7,15 @@ try {
   hasCoffee = true;
 } catch (e) {}
 
-if (hasCoffee) {
-  var CoffeeClass = SandboxedModule.load('../fixture/coffeeClass').exports;
+function testCoffee(file) {
+  var CoffeeClass = SandboxedModule.load(file).exports;
   assert.strictEqual(new CoffeeClass().simpleData(), 2);
+}
+
+if (hasCoffee) {
+  testCoffee('../fixture/coffeeClass');
+
+  SandboxedModule.registerBuiltInSourceTransformer('coffee', null, /.*filtered.*$/);
+  assert.throws(testCoffee.bind(null, '../fixture/coffeeClass'));
+  testCoffee('../fixture/filteredCoffee');
 }
